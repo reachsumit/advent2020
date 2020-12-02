@@ -11,7 +11,7 @@ def day1q1(numbers, target=2020):
 
 def day1q2(numbers, target=2020):
     for item in numbers:
-        retval = day1q1(numbers, 2020 - item)
+        retval = day1q1(numbers, target - item)
         if retval:
             return retval * item
 
