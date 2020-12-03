@@ -5,10 +5,10 @@ def day3q1(data, rows, cols, down=0, right=0):
     while True:
         x += down
         y += right
+
         if y > cols - 1:
             y -= cols
-
-        if x >= 0 and y >= 0 and y <= cols-1 and x <= rows-1:
+        if x <= rows-1:
             if data[x][y] == '#':
                 answer += 1
         else:
