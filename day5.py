@@ -19,15 +19,16 @@ def day5q1(boarding_passes):
         temp = (find_seat_id(
             boarding_pass[: 7], finding_rows=True)*8) + find_seat_id(boarding_pass[7:])
         present_passes.append(temp)
+
         if temp > answer:
             answer = temp
     return answer
 
 
 def day5q2():
-    for id in range(8, 1016):
-        if id not in present_passes and id-1 in present_passes and id+1 in present_passes:
-            return id
+    for id in present_passes:
+        if id+1 not in present_passes and id+2 in present_passes:
+            return id+1
 
 
 passes = [line.rstrip('\n') for line in open('input.txt')]
